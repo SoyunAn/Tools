@@ -1,0 +1,16 @@
+universe = vanilla
+executable = run.sh
+arguments = ttbar_10000 $(Process)
+error = logs/err/log_$(Process).err
+output = logs/out/log_$(Process).out
+log = logs/log/log_$(Process).log
+
+transfer_input_files = samples/ttbar_10000.txt,run.sh
+#transfer_output_files = delphes_output/
+
+accounting_group=group_cms
+when_to_transfer_output = ON_EXIT
+JobBatchName = Delphes_FWLite
+queue 200
+
++SingularityImage = "/cvmfs/singularity.opensciencegrid.org/cmssw/cms:rhel6-m202
